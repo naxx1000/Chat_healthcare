@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">P5-Chat-Test</string>
+
+    <string-array name="chat_test">
+        <item>Dr. John H. Watson</item>
+        <item>Dr. Victor Fries</item>
+        <item>Dr. Montgomery Montgomery</item>
+        <item>Dr. Emmett Brown</item>
+        <item>Dr. Leonard McCoy</item>
+    </string-array>
+
+    <string-array name="one">
+        <item>Hey.</item>
+        <item>How are you?</item>
+        <item>Are you feeling sick?</item>
+        <item>Let\'s meet next wednesday 12 o\' clock.</item>
+    </string-array>
+    
+</resources>
