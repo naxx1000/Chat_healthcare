@@ -29,6 +29,9 @@ public class MyAsyncTask extends AsyncTask<String, Void, String>{
     protected String doInBackground(String... params) {
         String chat_url = "http://p5testing.tk/message.php";
         String user_message = params[0];
+        String timestamp = params[1];
+        String author = params[2];
+
         try {
             URL url = new URL(chat_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
@@ -36,7 +39,9 @@ public class MyAsyncTask extends AsyncTask<String, Void, String>{
             httpURLConnection.setDoOutput(true);
             OutputStream outputStream = httpURLConnection.getOutputStream();
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-            String post_data = URLEncoder.encode("user_message","UTF-8")+"="+URLEncoder.encode(user_message,"UTF-8");
+            String post_data = URLEncoder.encode("user_message","UTF-8")+"="+URLEncoder.encode(user_message,"UTF-8")+"&"+
+                    URLEncoder.encode("timestamp","UTF-8")+"="+URLEncoder.encode(timestamp,"UTF-8")+"&"+
+                    URLEncoder.encode("author","UTF-8")+"="+URLEncoder.encode(author,"UTF-8");
             bufferedWriter.write(post_data);
             bufferedWriter.flush();
             bufferedWriter.close();
